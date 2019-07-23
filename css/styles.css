@@ -379,31 +379,59 @@ textarea {
     Navigation
 ============= */
 header section:nth-child(1) {
-  display: flex;
-  align-items: center; }
-
-header section:nth-child(2) a {
-  background-color: #F8C832;
-  color: #000;
-  height: 40px;
-  width: 40px;
-  border-radius: 100px;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 1.125rem; }
+  display: flex; }
+
+header section:nth-child(2) a:link, header section:nth-child(2) a:visited {
+  align-items: center;
+  background-color: #F8C832;
+  border-radius: 100px;
+  color: #000;
+  display: flex;
+  font-size: 1.125rem;
+  height: 40px;
+  justify-content: center;
+  width: 40px; }
+  @media (min-width: 980px) {
+    header section:nth-child(2) a:link, header section:nth-child(2) a:visited {
+      border-radius: 23px;
+      height: inherit;
+      padding: 7px 20px;
+      width: inherit; }
+      header section:nth-child(2) a:link i, header section:nth-child(2) a:visited i {
+        margin-right: 10px; } }
+
+header section:nth-child(2) a:active,
+header section:nth-child(2) a:hover {
+  background-color: #000;
+  color: #fff; }
 
 header nav {
   display: none; }
+  @media (min-width: 980px) {
+    header nav ul {
+      display: flex; } }
   header nav ul li {
     border-bottom: 1px solid #F8C832; }
+    @media (min-width: 980px) {
+      header nav ul li {
+        border: none;
+        border-right: 1px solid #000;
+        padding: 20px; } }
     header nav ul li a:link, header nav ul li a:visited {
       color: #fff;
+      display: inline-block;
       font-family: 'Roboto Slab', serif;
       font-size: 1.125rem;
       font-weight: 700;
-      padding: 20px 0;
-      display: inline-block; }
+      padding: 20px 0; }
+      @media (min-width: 980px) {
+        header nav ul li a:link, header nav ul li a:visited {
+          color: #000;
+          padding: 0; } }
+    @media (min-width: 980px) {
+      header nav ul li a:hover, header nav ul li a:active {
+        color: #F8C832; } }
   header nav ul li:last-child {
     border: none; }
 
@@ -411,28 +439,46 @@ header nav {
     Header
 ============= */
 header {
+  background-color: #fff;
   display: grid;
+  grid-template-areas: "burger survival" "nav nav";
   grid-template-columns: 20% auto;
-  grid-template-areas: "burger survival" "nav nav"; }
+  position: fixed;
+  top: 0;
+  width: 100%; }
+  @media (min-width: 980px) {
+    header {
+      grid-template-areas: "nav survival";
+      grid-template-columns: 70% auto; } }
   header section:nth-child(1) {
     grid-area: burger;
     padding: 10px; }
+    @media (min-width: 980px) {
+      header section:nth-child(1) {
+        display: none; } }
     header section:nth-child(1) button {
-      border: none;
       background-color: #fff;
+      border: none;
       outline: none; }
   header section:nth-child(2) {
-    grid-area: survival;
-    display: flex;
-    justify-content: flex-end;
     align-items: center;
+    display: flex;
+    grid-area: survival;
+    justify-content: flex-end;
     padding: 10px; }
     header section:nth-child(2) a span {
       display: none; }
+      @media (min-width: 980px) {
+        header section:nth-child(2) a span {
+          display: block; } }
   header nav {
-    padding: 10px;
+    background-color: #222222;
     grid-area: nav;
-    background-color: #222222; }
+    padding: 10px; }
+    @media (min-width: 980px) {
+      header nav {
+        background-color: #fff;
+        display: block !important; } }
 
 /* =============
     Footer
@@ -467,10 +513,11 @@ footer {
     Heroes
 ============= */
 #hero {
-  height: 358px;
   background-image: url("../img/hero/hero.jpg");
+  background-position: -100px 0;
   background-size: cover;
-  background-position: -100px 0; }
+  height: 358px;
+  margin-top: 60px; }
   @media (min-width: 585px) {
     #hero {
       height: 400px; } }
@@ -479,7 +526,8 @@ footer {
       height: 600px; } }
   @media (min-width: 980px) {
     #hero {
-      height: 700px; } }
+      height: 700px;
+      margin-top: 80px; } }
   @media (min-width: 1375px) {
     #hero {
       height: 900px; } }
@@ -488,10 +536,10 @@ footer {
       height: 90vh; } }
 
 #hero-2 {
-  height: 421px;
   background-image: url("../img/hero/hero-2.jpg");
+  background-position: right bottom;
   background-size: cover;
-  background-position: right bottom; }
+  height: 421px; }
   @media (min-width: 585px) {
     #hero-2 {
       background-position: center;
