@@ -311,9 +311,6 @@ template {
 /* =============
     Base
 ============= */
-body {
-  background-color: red; }
-
 h1, h2, h3, h4, h5, p, ul, figure {
   margin: 0;
   padding: 0; }
@@ -381,31 +378,98 @@ textarea {
 /* =============
     Navigation
 ============= */
+header section:nth-child(2) a:link, header section:nth-child(2) a:visited {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F8C832;
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  color: #000; }
+  @media (min-width: 980px) {
+    header section:nth-child(2) a:link, header section:nth-child(2) a:visited {
+      width: inherit;
+      height: inherit;
+      padding: 10px 20px;
+      border-radius: 20px; }
+      header section:nth-child(2) a:link i, header section:nth-child(2) a:visited i {
+        margin-right: 10px; } }
+
+header section:nth-child(2) a:hover, header section:nth-child(2) a:active {
+  color: #fff;
+  background-color: #000; }
+
+@media (min-width: 980px) {
+  header nav ul {
+    display: flex; } }
+
+header nav ul li {
+  border-bottom: 1px solid #F8C832; }
+  @media (min-width: 980px) {
+    header nav ul li {
+      border-bottom: none;
+      border-right: 1px solid #000;
+      padding: 0 50px; } }
+  header nav ul li a:link, header nav ul li a:visited {
+    font-family: 'Roboto Slab', serif;
+    color: #fff;
+    font-size: 1.25rem;
+    padding: 20px 0;
+    display: inline-block; }
+    @media (min-width: 980px) {
+      header nav ul li a:link, header nav ul li a:visited {
+        color: #000; } }
+  header nav ul li a:hover, header nav ul li a:active {
+    color: #F8C832; }
+
+header nav ul li:last-child {
+  border: none; }
+
 /* =============
     Header
 ============= */
 header {
   display: grid;
   grid-template-columns: 20% auto;
-  padding: 10px; }
-  header nav i {
-    font-size: 1.875rem;
-    margin-top: 8px; }
-  header aside {
-    text-align: right; }
-    header aside a:link,
-    header aside a:visited {
-      background-color: #F8C832;
-      border-radius: 1.4375rem;
-      color: #000;
-      display: inline-block;
-      font-size: 1.125rem;
-      font-weight: 700;
-      padding: 13px 25px; }
-    header aside a:active,
-    header aside a:hover {
-      background-color: #F8C832;
-      color: #fff; }
+  grid-template-areas: "burger survival" "nav nav";
+  background-color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0; }
+  @media (min-width: 980px) {
+    header {
+      grid-template-areas: "nav survival"; } }
+  header section:nth-child(1) {
+    padding: 10px;
+    grid-area: burger; }
+    @media (min-width: 980px) {
+      header section:nth-child(1) {
+        display: none; } }
+    header section:nth-child(1) button {
+      background-color: #fff;
+      border: none;
+      outline: none; }
+  header section:nth-child(2) {
+    padding: 10px;
+    grid-area: survival;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    header section:nth-child(2) a span {
+      display: none; }
+      @media (min-width: 980px) {
+        header section:nth-child(2) a span {
+          display: inline-block; } }
+  header nav {
+    display: none !important;
+    padding: 10px;
+    grid-area: nav;
+    background-color: #222222; }
+    @media (min-width: 980px) {
+      header nav {
+        display: block !important;
+        background-color: #fff; } }
 
 /* =============
     Footer
@@ -443,7 +507,8 @@ footer {
   height: 358px;
   background-image: url("../img/hero/hero.jpg");
   background-size: cover;
-  background-position: -100px 0; }
+  background-position: -100px 0;
+  margin-top: 50px; }
   @media (min-width: 585px) {
     #hero {
       height: 400px; } }
@@ -452,7 +517,8 @@ footer {
       height: 600px; } }
   @media (min-width: 980px) {
     #hero {
-      height: 700px; } }
+      height: 700px;
+      margin-top: 83px; } }
   @media (min-width: 1375px) {
     #hero {
       height: 900px; } }

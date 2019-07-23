@@ -1,3 +1,73 @@
 /* =============
     Navigation
 ============= */
+header{
+    // survial button
+    section:nth-child(2){
+
+        a:link, a:visited{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $sunflower;
+            height: 30px;
+            width: 30px;
+            border-radius: 100px;
+            color: $black;
+
+            @include lg{
+                width: inherit;
+                height: inherit;
+                padding: 10px 20px;
+                border-radius: 20px;
+
+                i{
+                    margin-right: 10px;
+                }
+            }
+        }
+        a:hover, a:active{
+            color: $white;
+            background-color: $black;
+        }
+    }
+
+    nav{
+
+        ul{
+            @include lg{
+                display: flex;
+            }
+
+            li{
+                border-bottom: 1px solid $sunflower;
+
+                @include lg{
+                    border-bottom: none;
+                    border-right: 1px solid $black;
+                    padding: 0 50px;
+                }
+
+                a:link, a:visited{
+                    font-family: 'Roboto Slab', serif;
+                    color: $white;
+                    font-size: rem-calc(20);
+                    padding: 20px 0;
+                    display: inline-block;
+
+                    @include lg{
+                        color: $black;
+                    }
+                }
+
+                a:hover, a:active{
+                    color: $sunflower;
+                }
+            }
+
+            li:last-child{
+                border: none;
+            }
+        }
+    }
+}
